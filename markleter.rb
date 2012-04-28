@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'haml'
-require 'yui/compressor'
+require 'jsmin'
 
 set :haml, :format => :html5
 
@@ -11,7 +11,6 @@ end
 
 post '/markletize' do
 	marklet = params[:marklet] 
-	compressor = YUI::JavaScriptCompressor.new(:munge => false)
-	minned = compressor.compress(marklet)
+	minned = JSMin.minify(marklet)
 	haml :marklet, :locals => {:minned => minned}
 end
