@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'sinatra'
+require 'haml'
 
 get '/' do
-	"Markleter!"
+	haml :index, :format => :html5
 end
