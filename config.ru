@@ -1,2 +1,2 @@
-require './main'
+require './markleter'
 run Sinatra::Application
