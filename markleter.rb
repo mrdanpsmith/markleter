@@ -3,7 +3,7 @@ require 'sinatra'
 require 'haml'
 require 'jsmin'
 
-set :haml, :format => :html5
+set :haml,{:format => :html5, :escape_html => true, :escape_attrs => true}
 
 get '/' do
 	haml :index

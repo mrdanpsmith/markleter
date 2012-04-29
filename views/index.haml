@@ -6,9 +6,13 @@
 		%h1 Welcome to Markleter!
 		%div To make a new bookmarklet and share it, use the form below:
 		%form{:action=>'markletize',:method=>:post}
-			%fieldset
-				%label{:for=>:name} Name:
-				%input{:name=>:name}
-				%label{:for=>:source} Source:
-				%textarea{:name=>:source}
-				%button{:type=>:submit} Submit!	
+			%dl
+				%dt
+					%label{:for=>:name} Name:
+				%dd
+					%input{:name=>:name}
+				%dt
+					%label{:for=>:source} Source:
+				%dd
+					%textarea{:name=>:source}
+			%button{:type=>:submit} Submit!	
