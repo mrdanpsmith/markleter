@@ -1,17 +1,15 @@
 require 'rubygems'
 require 'sinatra'
 require 'haml'
-require 'jsmin'
+require './mark'
 
-set :haml,{:format => :html5, :escape_html => true, :escape_attrs => true}
+set :haml, {:format => :html5, :escape_html => true, :escape_attrs => true}
 
 get '/' do
 	haml :index
 end
 
 post '/markletize' do
-	source = params[:source]
-	marklet = 'javascript:(function(){' + source + '})();'
-	marklet = JSMin.minify(marklet)
+	marklet = Mark.marklet(params[:source],params[:library])
 	haml :marklet, :locals => {:marklet => marklet, :name => params[:name]}
 end
