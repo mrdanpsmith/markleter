@@ -5,7 +5,10 @@
 	%body
 		%h1 Welcome to Markleter!
 		%div To make a new bookmarklet and share it, use the form below:
-		%form{:action=>'markletize',:method=>'post'}
+		%form{:action=>'markletize',:method=>:post}
 			%fieldset
-				%textarea{:name=>'marklet'}
-				%button{:type=>'submit'} Submit!	
+				%label{:for=>:name} Name:
+				%input{:name=>:name}
+				%label{:for=>:source} Source:
+				%textarea{:name=>:source}
+				%button{:type=>:submit} Submit!	

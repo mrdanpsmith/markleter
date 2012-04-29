@@ -10,7 +10,8 @@ get '/' do
 end
 
 post '/markletize' do
-	marklet = params[:marklet] 
-	minned = JSMin.minify(marklet)
-	haml :marklet, :locals => {:minned => minned}
+	source = params[:source]
+	marklet = 'javascript:(function(){' + source + '})();'
+	marklet = JSMin.minify(marklet)
+	haml :marklet, :locals => {:marklet => marklet, :name => params[:name]}
 end

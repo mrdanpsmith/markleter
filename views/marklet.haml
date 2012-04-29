@@ -3,4 +3,8 @@
 	%head
 		%title Here's your marklet!
 	%body
-		%div= minned
+		%h1 Here's your marklet
+		%p If you need to copy and paste the code you'll find that below:
+		%textarea= marklet
+		%p and if you need a link that's below:
+		%a{:href => marklet}=name
