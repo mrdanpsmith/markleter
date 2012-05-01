@@ -11,5 +11,5 @@ end
 
 post '/markletize' do
 	marklet = Mark.marklet(params[:source],params[:library])
-	haml :marklet, :locals => {:marklet => marklet, :name => params[:name]}
+	haml :marklet, :locals => {:marklet => marklet, :name => params[:name], :source => params[:source]}
 end
