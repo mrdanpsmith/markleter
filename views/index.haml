@@ -4,7 +4,7 @@
 		%title Markleter
 	%body
 		%h1 Welcome to Markleter!
-		%div To make a new bookmarklet and share it, use the form below:
+		%div To make a new bookmarklet and share it, use the form below.
 		%form{:action=>'markletize', :method=>:post}
 			%dl
 				%dt
@@ -20,8 +20,8 @@
 				%dd
 					%select{:name=>:library}
 						%option{:value=>'none'} None
-						%option{:value=>'jquery'} jQuery (latest)
+						%option{:value=>'jquery'} jQuery (Latest)
 			%p
-				%strong Please Note:
-				Because this website uses the JSMin library to generate the bookmarklet output, semicolons are required.
-			%button{:type=>:submit} Submit!	
+				%strong Note:
+				This website uses the JSMin library to generate the bookmarklet output; semicolons are required.
+			%button{:type=>:submit} Submit	
