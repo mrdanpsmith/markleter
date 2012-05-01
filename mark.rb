@@ -5,28 +5,27 @@ module Mark
 	LIBRARIES = 
 		{
 			'none'=>'(function(){%s})();',
-			'jquery'=><<JQUERY
-(function(){
-	// the version of jQuery we want
-	var v = "1.7.2";
-
-	// check prior inclusion and version
-	if (window.jQuery === undefined || window.jQuery.fn.jquery < v) {
-		var done = false;
-		var script = document.createElement("script");
-		script.src = "http://ajax.googleapis.com/ajax/libs/jquery/" + v + "/jquery.min.js";
-		script.onload = script.onreadystatechange = function(){
-			if (!done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")) {
-				done = true;
-				initMyBookmarklet();
-			}
-		};
-		document.getElementsByTagName("head")[0].appendChild(script);
-	} else {
-		initBookmarklet();
-	}
-	function initBookmarklet() {
+			'jquery'=>
+<<JQUERY
+(function() {
+	var marklet = function($) {
 		%s
+	};
+	if (typeof jQuery == 'undefined') {
+		var e = document.createElement('script');
+		e.onload = function() { 
+			jQuery.noConflict();
+			var l = 'Loaded jQuery ' + jQuery.fn.jquery;
+			if(typeof console == 'undefined') {
+				alert(l);
+			} else {
+				console.info(l);
+			}
+			marklet(jQuery);
+		};
+ 		e.setAttribute('type', 'text/javascript');
+ 		e.setAttribute('src', 'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js');
+		document.body.appendChild(e);
 	}
 })();
 JQUERY
