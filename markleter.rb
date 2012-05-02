@@ -2,6 +2,7 @@ require 'rubygems'
 require 'sinatra'
 require 'haml'
 require './mark'
+require './models/marklet'
 
 set :haml, {:format => :html5, :escape_html => true, :escape_attrs => true}
 
