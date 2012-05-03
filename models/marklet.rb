@@ -2,10 +2,9 @@ require 'data_mapper'
 
 class Marklet
 	include DataMapper::Resource
-
 	property :id,		Serial
-	property :name,		String
-	property :source,	String
-	property :markletized,	String
+	property :name,		String,		:length => 50
+	property :source,	String,		:length => 2**10*4 
+	property :marklet,	String,		:length => 2**10*6
 	property :created_at,	DateTime
 end
