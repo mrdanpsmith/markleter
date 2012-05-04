@@ -2,6 +2,7 @@ GEM
   remote: http://rubygems.org/
   specs:
     addressable (2.2.7)
+    base62 (0.1.4)
     bcrypt-ruby (3.0.1)
     data_mapper (1.2.0)
       dm-aggregates (~> 1.2.0)
@@ -72,6 +73,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  base62
   data_mapper
   dm-postgres-adapter
   haml

@@ -5,8 +5,8 @@
 	%body
 		%h1 Your marklet
 		%p Original source:
-		%pre= source
+		%pre= marklet.source
 		%p To copy and paste:
-		%textarea= marklet
+		%textarea= marklet.marklet
 		%p To bookmark:
-		%a{:href => marklet}=name
+		%a{:href => marklet.marklet}=marklet.name
