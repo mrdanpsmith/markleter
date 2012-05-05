@@ -1,12 +1,11 @@
 !!! 5
 %html
 	%head
-		%title Your marklet
+		%title Markleter
 	%body
-		%h1 Your marklet
-		%p Original source:
-		%pre= marklet.source
-		%p To copy and paste:
-		%textarea= marklet.marklet
-		%p To bookmark:
+		%h1 Markleter
 		%a{:href => marklet.marklet}=marklet.name
+		%p Source:
+		%pre= marklet.source
+		%p Copy and Paste:
+		%textarea= marklet.marklet

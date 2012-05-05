@@ -6,15 +6,16 @@
 		%h1 Markleter
 		%div To make a new bookmarklet and share it, use the form below.
 		%form{:action=>'markletize', :method=>:post}
+			- errors(marklet)
 			%dl
 				%dt
 					%label{:for=>:name} Name:
 				%dd
-					%input{:name=>:name}
+					%input{:name=>:name, :value=>marklet.name}
 				%dt
 					%label{:for=>:source} Source:
 				%dd
-					%textarea{:name=>:source}
+					%textarea{:name=>:source, :value=>marklet.source}
 				%dt
 					%label{:for=>:library} Library:
 				%dd
