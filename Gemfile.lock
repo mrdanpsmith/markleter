@@ -4,6 +4,7 @@ GEM
     addressable (2.2.7)
     base62 (0.1.4)
     bcrypt-ruby (3.0.1)
+    coderay (1.0.6)
     data_mapper (1.2.0)
       dm-aggregates (~> 1.2.0)
       dm-constraints (~> 1.2.0)
@@ -74,6 +75,7 @@ PLATFORMS
 
 DEPENDENCIES
   base62
+  coderay
   data_mapper
   dm-postgres-adapter
   haml

@@ -6,6 +6,6 @@
 		%h1 Markleter
 		%a{:href => marklet.marklet}=marklet.name
 		%p Source:
-		%pre= marklet.source
+		~ CodeRay.scan(marklet.source, :javascript).div(:css => :class)
 		%p Copy and Paste:
 		%textarea= marklet.marklet
