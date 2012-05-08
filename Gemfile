@@ -1,5 +1,6 @@
 source :rubygems
 gem 'sinatra'
+gem 'compass'
 gem 'haml'
 gem 'base62'
 gem 'jsmin'
