@@ -32,5 +32,6 @@ end
 get '/:base62id' do
 	id = params[:base62id].base62_decode
 	@marklet = Marklet.get(id)
+	@marklet.source = CodeRay.scan(@marklet.source, :javascript).div(:css => :class, :line_numbers => :inline)
 	haml :marklet, :locals => {:marklet => @marklet}
 end

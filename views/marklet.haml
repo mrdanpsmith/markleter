@@ -2,10 +2,11 @@
 %html
 	%head
 		%title Markleter
+		%link{:rel => :stylesheet, :href => 'syntax_highlighting.css', :type => 'text/css'}
 	%body
 		%h1 Markleter
 		%a{:href => marklet.marklet}=marklet.name
 		%p Source:
-		~ CodeRay.scan(marklet.source, :javascript).div(:css => :class)
+		!= marklet.source
 		%p Copy and Paste:
 		%textarea= marklet.marklet
