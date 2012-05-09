@@ -24,12 +24,12 @@ form dl dt {
 	float: left;
 	clear: left;
 	margin: 0;
+	padding-top: 0.2em;
+	margin-right: 1em;
 }
 
 form dl dd {
-	float: left;
-	margin-left: 1em;
-	margin-right: 0;
-	margin-top: 0;
+	margin: 0;
 	margin-bottom: 1em;
+	padding: 0;
 }
