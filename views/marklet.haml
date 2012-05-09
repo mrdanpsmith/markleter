@@ -1,13 +1,16 @@
 !!! 5
 %html
 	%head
-		%title Markleter - #{marklet.name}
+		%title #{marklet.name} - Markleter
 		%link{:rel => :stylesheet, :href => 'css/main.css', :type => 'text/css'}
 		%link{:rel => :stylesheet, :href => 'css/syntax_highlighting.css', :type => 'text/css'}
 	%body
-		%h1 Markleter
-		%a{:href => marklet.marklet}=marklet.name
+		%h1
+			%a{:href => marklet.marklet}=marklet.name
 		%p Source:
-		!= find_and_preserve marklet.source
+		!~ marklet.source
 		%p Copy and Paste:
 		%textarea= marklet.marklet
+		%p Share:
+		%p
+			%a{:href => request.url} Link
