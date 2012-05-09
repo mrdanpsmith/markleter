@@ -23,13 +23,13 @@ form dl {
 form dl dt {
 	float: left;
 	clear: left;
-}
-
-form dl dt label {
-	margin-right: 1em;
+	margin: 0;
 }
 
 form dl dd {
 	float: left;
+	margin-left: 1em;
+	margin-right: 0;
+	margin-top: 0;
 	margin-bottom: 1em;
 }
