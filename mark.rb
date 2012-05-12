@@ -29,6 +29,6 @@ JQUERY
 		}
 	def Mark.marklet(source,library)
 		marklet = LIBRARIES[library] % [source]
-		JSMin.minify(JS_PROTOCOL+marklet)
+		JSMin.minify(JS_PROTOCOL+marklet).split("\n").join("")
 	end
 end
