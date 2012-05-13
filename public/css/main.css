@@ -8,6 +8,12 @@ textarea {
 	height: 15em;
 }
 
+#source {
+	width: 500px;
+	height: 400px;
+	position: relative;
+}
+
 input, textarea, select {
 	border: thin solid black;
 }
