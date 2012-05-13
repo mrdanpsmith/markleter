@@ -18,7 +18,6 @@ post '/markletize' do
 	@marklet = Marklet.new(
 		:name		=> params[:name],
 		:source		=> params[:source],
-		:marklet	=> Mark.marklet(params[:source],params[:library]),
 		:library	=> params[:library],
 		:created_at	=> Time.now
 	)
@@ -32,6 +31,7 @@ end
 get '/:base62id' do
 	id = params[:base62id].base62_decode
 	@marklet = Marklet.get(id)
-	@marklet.source = CodeRay.scan(@marklet.source, :javascript).div(:css => :class, :line_numbers => :inline)
-	haml :marklet, :locals => {:marklet => @marklet}
+	@bookmarklet = Mark.marklet(@marklet.source, @marklet.library)
+	@marklet.source = CodeRay.scan(@marklet.source, :javascript).div(:css => :class)
+	haml :marklet, :locals => {:marklet => @marklet, :bookmarklet => @bookmarklet}
 end

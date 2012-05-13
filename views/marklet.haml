@@ -6,11 +6,11 @@
 		%link{:rel => :stylesheet, :href => 'css/syntax_highlighting.css', :type => 'text/css'}
 	%body
 		%h1
-			%a{:href => marklet.marklet}=marklet.name
+			%a{:href => bookmarklet}=marklet.name
 		%p Source:
 		!~ marklet.source
 		%p Copy and Paste:
-		%textarea= marklet.marklet
+		%textarea= bookmarklet 
 		%p Share:
 		%p
 			%a{:href => request.url} Link
