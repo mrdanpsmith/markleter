@@ -13,9 +13,24 @@ window.onload = function() {
 			editorTextarea.innerHTML = editor.getSession().getValue();
 		};
 	};
-	addSourceDiv();
-	var editor = ace.edit("source");
-	setUpFormOnSubmit(editor);
-	editor.getSession().setMode("ace/mode/javascript");
-	editor.getSession().setValue(editorTextarea.innerHTML);
+	var replaceTextarea = function() {
+		addSourceDiv();
+		var editor = ace.edit("source");
+		setUpFormOnSubmit(editor);
+		editor.getSession().setMode("ace/mode/javascript");
+		editor.getSession().setValue(editorTextarea.innerHTML);
+	};
+	var getIEVersion = function() {
+		var ua = window.navigator.userAgent;
+		var msie = ua.indexOf("MSIE ");
+		if (msie > 0) {
+			return parseInt(ua.substring(msie+5, ua.indexOf(".", msie)));
+		} else {
+			return 0;
+		}
+	};
+	var msie = getIEVersion();
+	if (msie == 0 || msie > 7) {
+		replaceTextarea();
+	}
 };
