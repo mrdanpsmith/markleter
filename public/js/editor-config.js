@@ -1,6 +1,5 @@
 window.onload = function() {
 	var editorTextarea = document.getElementsByName("source")[0];
-	editorTextarea.style.display = "none";
 	var addSourceDiv = function() {
 		var editorTextareaParent = editorTextarea.parentNode;
 		var editorDiv = document.createElement("div");
@@ -14,6 +13,7 @@ window.onload = function() {
 		};
 	};
 	var replaceTextarea = function() {
+		editorTextarea.style.display = "none";
 		addSourceDiv();
 		var editor = ace.edit("source");
 		setUpFormOnSubmit(editor);
